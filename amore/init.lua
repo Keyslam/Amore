@@ -29,4 +29,10 @@ local Amore = {
 	]]
 }
 
+---@module "amore.core.collector"
+Amore.collector = require(PATH..".core.collector")
+
+---@module "amore.core.descriptors"
+Amore.descriptors = require(PATH..".core.descriptors")
+
 return Amore

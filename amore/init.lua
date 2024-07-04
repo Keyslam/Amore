@@ -35,4 +35,12 @@ Amore.collector = require(PATH..".core.collector")
 ---@module "amore.core.descriptors"
 Amore.descriptors = require(PATH..".core.descriptors")
 
+---@module "amore.core.runner"
+Amore.runner = require(PATH..".core.runner")
+
+Amore.reporters = {
+	---@module "amore.core.reporters.consoleReporter"
+	consoleReporter = require(PATH..".core.reporters.consoleReporter")
+}
+
 return Amore

@@ -12,12 +12,12 @@ local function multiply(a, b) return a * b end
 local function divide(a, b) return a / b end
 
 descriptors:describe("my-test", function()
-	print("Hello")
 end)
 
 Collection("arithmetic-tests", function()
 	Describe("addition-test", function()
 		local result = sum(3, 4)
+		error("ohnoo")
 		-- Assert:isEqual(7, result)
 	end)
 
@@ -45,6 +45,9 @@ Collection("arithmetic-tests", function()
 end)
 
 local rootCollection = collector:getRootCollection()
+local reporter = Amore.reporters.consoleReporter()
 
+local runner = Amore.runner(rootCollection, reporter)
+local wasSuccess = runner:run()
 
-love.event.quit(0)
+love.event.quit(wasSuccess and 0 or 1)

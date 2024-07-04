@@ -18,6 +18,7 @@ function Collector:pushCollection(collectionName)
 	local collection = self:createCollection(collectionName)
 
 	table.insert(activeCollection.collections, collection)
+	table.insert(self.activeCollectionStack, collection)
 end
 
 function Collector:popCollection()
